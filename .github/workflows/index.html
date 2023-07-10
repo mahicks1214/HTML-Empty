@@ -1,36 +1,52 @@
-# This is a basic workflow to help you get started with Actions
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Form</title>
+</head>
+<body>
+  <h1>Sign In</h1>
 
-name: CI
+  <form>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
 
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    <div>
+      <label for="github-username">Github Username:</label>
+      <input type="text" id="github-username" name="github-username" required>
+    </div>
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    <div>
+      <label>Account Type:</label>
+      <div>
+        <input type="radio" id="enterprise" name="account-type" value="enterprise">
+        <label for="enterprise">Enterprise</label>
+      </div>
+      <div>
+        <input type="radio" id="pro" name="account-type" value="pro">
+        <label for="pro">Pro</label>
+      </div>
+      <div>
+        <input type="radio" id="free" name="account-type" value="free">
+        <label for="free">Free</label>
+      </div>
+    </div>
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+    <div>
+      <input type="checkbox" id="remember-me" name="remember-me">
+      <label for="remember-me">Remember Me</label>
+    </div>
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
